@@ -1,3 +1,8 @@
+# Antibody
+# https://getantibody.github.io/
+# Run static antibody bundle to load ZSH and plugins
+source ~/.antibody-bundle.sh
+
 # Dotfiles
 # https://www.atlassian.com/git/tutorials/dotfiles
 # Alias using git commands with local user config repo
