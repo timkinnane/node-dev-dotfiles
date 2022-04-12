@@ -1,0 +1,8 @@
+[credential]
+	helper = osxkeychain
+[core]
+	excludesfile = ~/.gitignore
+[gpg]
+	program = /usr/local/bin/gpg
+[init]
+	defaultBranch = trunk
