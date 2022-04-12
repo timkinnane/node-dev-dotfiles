@@ -5,8 +5,9 @@ Verion managed user environment configuration.
 ---
 
 Files in this repo are intended to be cloned into the user path in OS X `~/` to provide rapid
-environment configuration with cross-machine consistency. There's no private data or secrets
-included so its safe to clone and contribute back to.
+environment configuration with cross-machine consistency.
+
+There's no private data or secrets committed.
 
 For more details on the approach see: https://www.atlassian.com/git/tutorials/dotfiles
 
@@ -33,7 +34,7 @@ git config --global --edit
 
 When editing in shell, use `ESC` to enter commands and `:wq` to save and quit.
 
-Enter the following, editing your name.
+Enter the following, substituting your personal details.
 
 ```
 [user]
@@ -60,10 +61,10 @@ Visit [https://brew.sh](https://brew.sh) to confirm install command is up to dat
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
-Now install the top shelf tools. Is it too early for another? 💁‍♀️ ☕
+Now install the top shelf tools... Is it too early for another? 💁‍♀️ ☕
 
 ```sh
-brew install antibody fnm gh gnupg openjdk spaceship alfred warp visual-studio-code yarn direnv awscli
+brew install antibody fnm gh gnupg spaceship alfred warp visual-studio-code yarn direnv awscli openvpn-connect
 ```
 
 When that's done use Alfred and Warp for the rest.
@@ -159,7 +160,7 @@ config push
 
 # Post-install
 
-Reload or create a new terminal tab to initialize the shell plugins.
+Reload or create a new terminal tab to initialize shell plugins.
 
 ## Antibody
 
