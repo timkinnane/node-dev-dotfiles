@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# CLI provides simple operation of the AWS SSO crentials tools
+# Usage:
+# awssso install - install all requiremnets
+# awssso login - login to all profiles
+# awssso <profile> - switch to given profile
+
+SSO_TOOL_REPO="https://github.com/ACloudGuru/aws-sso-credentials.git"
+SSO_TOOL_PATH="$HOME/lib/aws-sso-credentials"
+ZSCALER_CERT_PATH="$HOME/.ssl/zscaler.crt"
+MODE_OR_PROFILE="$1"
+
+# Install the AWS SSO tool, it's prerequisites and the Zscaler certificate
+if [ $MODE_OR_PROFILE = "install" ]; then
+
+  # Clone the repo, if it doesn't exist already
+  if [ -d "$SSO_TOOL_PATH" ]; then
+    echo -e "✅ Repository exits at $SSO_TOOL_PATH\n"
+  else
+    command git clone https://github.com/ACloudGuru/aws-sso-credentials.git $SSO_TOOL_PATH
+  fi
+
+  # Install requirements, quiet mode so it doesn't shout if they exist
+  command pip3 install --quiet --requirement $SSO_TOOL_PATH/requirements.txt
+  echo -e "💁 Ignore deprecation warnings, they should be resolved with Python 3.10 release\n"
+
+  # Read the Zscaler cert into Python's cert bundle
+  if [ ! -f "$ZSCALER_CERT_PATH" ]; then
+    echo -e "🛑 Zscaler certificate missing, download to ${ZSCALER_CERT_PATH}\n"
+  elif [ ! -z "$(cat $ZSCALER_CERT_PATH | grep -f $(python3 -m certifi))" ]; then
+    echo -e "✅ Zscaler certificate exists in $(python3 -m certifi)\n"
+  else
+    command cat $ZSCALER_CERT_PATH >> $(python3 -m certifi)
+    echo -e "🔐 Zscaler certificate added to $(python3 -m certifi)\n"
+  fi
+
+# Use AWS SSO to create daily credentials for shell sessions
+elif [ $MODE_OR_PROFILE = "login" ]; then
+  command $SSO_TOOL_PATH/awssso --all --login
+
+# Use AWS SSO to a given profile and add it to env defaults
+else
+  command $SSO_TOOL_PATH/awssso --profile $MODE_OR_PROFILE
+  export AWS_PROFILE=$MODE_OR_PROFILE
+  export AWS_DEFAULT_PROFILE=$MODE_OR_PROFILE
+fi

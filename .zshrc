@@ -9,28 +9,29 @@ source ~/.antibody-bundle.sh
 # e.g. config add ~/.zshrc to commit this file.
 alias config='git --git-dir=$HOME/.cfg --work-tree=$HOME'
 
-# FNM (Fast Node Manager)
-# https://github.com/Schniz/fnm
-# Add FNM environment configs and cd hooks
-eval "$(fnm env --use-on-cd)"
+# ASDF
+# http://asdf-vm.com/
+# Add ASDF environment setup.
+source $(brew --prefix asdf)/libexec/asdf.sh
 
 # Spaceship
 # https://spaceship-prompt.sh/
-# Fix unsightly colours in prompt
+# Fix unsightly colours in prompt ;)
 LSCOLORS=ExFxBxDxCxegedabagacad
 SPACESHIP_DIR_COLOR=blue
 SPACESHIP_PACKAGE_SHOW=false
 SPACESHIP_GIT_STATUS_COLOR=magenta
 
 # Path
-# Override system defaults with Homebrew binary paths
+# Extend defaults with Homebrew and user binary paths
 export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/bin:$PATH
 export PATH=/usr/sbin:$PATH
 export PATH=/sbin:$PATH
 export PATH=/bin:$PATH
 export PATH=/private/tmp:$PATH
-export PATH=/usr/local/bin:$PATH 
+export PATH=/usr/local/bin:$PATH
+export PATH=$HOME/bin:$PATH
 export MANPATH=/usr/local/man:$MANPATH
 
 # Use hyphen-insensitive completion

@@ -2,6 +2,9 @@
 
 Verion managed user environment configuration for NodeJS developers.
 
+This repo is public by design, as it assists in setting up access to restricted repos.
+There's no private data or secrets committed.
+
 ---
 
 # Prerequisites
@@ -19,7 +22,7 @@ xcode-select --install
 # Install
 
 Files in this repo are intended to be cloned into the user path in OS X `~/` to provide rapid
-configuration with cross-machine consistency. There's no private data or secrets committed.
+configuration with cross-machine consistency.
 
 For more details on the approach see: https://www.atlassian.com/git/tutorials/dotfiles
 
@@ -59,7 +62,7 @@ config push
 
 # Setup
 
-Now that environment and utility configs have been added, we can install the tools themselves...
+Now that environment and utility configs have been added, we can install the tools...
 
 ## 1. Homebrew
 
@@ -95,19 +98,30 @@ Open a new shell for it to take effect, or manually...
 source ~/.antibody-bundle.sh
 ```
 
-## 3. FNM
+## 3. ASDF
 
-FNM is installed for super fast Node version switching.
+ASDF is installed for switching language environment versions.
 
-Find the [latest stable version](https://nodejs.org/en/about/releases/) codenames or any specifiic
-version you need to install. e.g.
+We do need to install the Node plugin though...
 
-```sh
-fnm install lts/Gallium # node v16 lts
-fnm install lts/Fermium # node v14 lts
+```
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 ```
 
-ZSH is loading FNM and will auto-switch env when entering a path with a `.node-version` file.
+> Tip: List the all Node LTS versions with `asdf list all nodejs`
+
+And the Node version you need for your project (usually LTS v14 or v16)...
+
+```sh
+asdf install nodejs lts-gallium # node v16 lts
+asdf install nodejs lts-fermium # node v14 lts
+```
+
+You can set the global version but ASDF will read version files and switch automatically.
+
+```
+asdf global nodejs lts-gallium
+```
 
 **For example** create a lock file for the current Node version *in a project path*:
 
@@ -167,3 +181,38 @@ gpg --armor --export <YOUR ID> | pbcopy
 ```
 
 Load the key/s into GitHub, Gitlab and/or BitBucket
+
+### AWS SSO
+
+#### Setup
+
+Use AWS CLI to create profiles with your config:
+
+> Tip:  Give profiles a simple name like `dev`, `staging` or `production`.
+
+```
+aws configure sso
+```
+
+Run our AWS SSO tool installer (which also adds you local cert to Python's certificate bundle).
+
+```sh
+awssso install
+```
+
+#### Login
+
+For Node development with SSO sessions, we need to populate AWS credentials and environment vars, to
+be available to tools like Oprah and Serverless Framework.
+
+Once each day, you'll need to login to populate credentials for any profiles in `~/.aws/config`
+
+```sh
+awssso login
+```
+
+Then switch into the desired profile, for example `dev`
+
+```sh
+awssso dev
+```
