@@ -1,7 +1,20 @@
+# Path
+# Extend defaults with Homebrew and user binary paths
+export PATH=/usr/local/sbin:$PATH
+export PATH=/usr/bin:$PATH
+export PATH=/usr/sbin:$PATH
+export PATH=/sbin:$PATH
+export PATH=/bin:$PATH
+export PATH=/private/tmp:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=$HOME/bin:$PATH
+export MANPATH=/usr/local/man:$MANPATH
+
 # Antibody
 # https://getantibody.github.io/
 # Run static antibody bundle to load ZSH and plugins
-source ~/.antibody-bundle.sh
+source $HOME/.antibody-bundle.sh
+alias antibundle='antibody bundle < $HOME/.antibody-plugins > $HOME/.antibody-bundle.sh'
 
 # Dotfiles
 # https://www.atlassian.com/git/tutorials/dotfiles
@@ -22,17 +35,11 @@ SPACESHIP_DIR_COLOR=blue
 SPACESHIP_PACKAGE_SHOW=false
 SPACESHIP_GIT_STATUS_COLOR=magenta
 
-# Path
-# Extend defaults with Homebrew and user binary paths
-export PATH=/usr/local/sbin:$PATH
-export PATH=/usr/bin:$PATH
-export PATH=/usr/sbin:$PATH
-export PATH=/sbin:$PATH
-export PATH=/bin:$PATH
-export PATH=/private/tmp:$PATH
-export PATH=/usr/local/bin:$PATH
-export PATH=$HOME/bin:$PATH
-export MANPATH=/usr/local/man:$MANPATH
+# Secrets
+# Internal tool at ~/bin/secret
+# Export secrets from Keychain into shell
+secret export NPM_TOKEN
+secret export BUILDKITE_TOKEN
 
 # Use hyphen-insensitive completion
 HYPHEN_INSENSITIVE="true"
