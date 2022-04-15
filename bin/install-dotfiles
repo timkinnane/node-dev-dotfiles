@@ -28,6 +28,7 @@ else
   echo -e "✅ Antibody ZSH plugin bundle exists\n"
 fi
 
+# Take user input to create git config
 if [ ! -f "$HOME/.gitconfig" ]; then
   echo -e "📝 Creating global git config at $HOME/.gitconfig\n"
   command git config --global include.path "$HOME/.gitconfig-defaults"
@@ -48,4 +49,7 @@ else
 fi
 
 # Done
-echo -e "💟 DotFiles installed, restart shell for changes to take effect.\n"
+echo -e "💟 DotFiles installed, restart shell for changes to take effect\n"
+
+# Prompt to open docs
+echo -e "📓 Open next steps documentation with \`glow ~/docs/AWSSSO.md\`\n"

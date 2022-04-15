@@ -48,7 +48,10 @@ What does this script do?
 	- `secret` bin script for storing shell secrets in your key chain
 	- `awssso` bin script for interacting with AWS SSO profiles
 2. Ignores any user files that aren't explicitly tracked
-3. Installs [Visual Studio Code](https://code.visualstucdio.com/) and [Open VPN Connect](https://code.visualstucdio.com/) with Homebrew
+3. Installs app bundle with Homebrew...
+  - [Visual Studio Code](https://code.visualstucdio.com/)
+  - [Open VPN Connect](https://code.visualstucdio.com/)
+  - [Glow markdown CLI](https://github.com/charmbracelet/glow)
 4. Compiles an Antibody bundle of ZSH plugins to load on shell init
 5. Takes inputs for creating global git config file
 
