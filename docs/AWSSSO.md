@@ -1,7 +1,7 @@
 # Authenticating tools with AWS SSO
 
-For some Node libraries like Oprah and Serverless Framework use legacy credentials methods to
-connect to AWS accounts, so we need a tool to populate those values from SSO sessions.
+Some Node libraries like Oprah and Serverless Framework use legacy credentials to
+authenticate AWS accounts, so we need a tool to populate those values from SSO sessions.
 
 If you don't have `~/.aws/config` with your profile configs already, use AWS CLI to create one:
 
