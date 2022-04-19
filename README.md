@@ -1,9 +1,19 @@
+[Homebrew]: https://docs.brew.sh/
+[Oh-My-ZSH]: https://github.com/ohmyzsh/ohmyzsh/
+[Antibody]: https://getantibody.github.io/
+[Alfred]: https://www.alfredapp.com/
+[Insomnia]: https://insomnia.rest/
+[Warp]: https://www.warp.dev/
+[VS-Code]: https://code.visualstucdio.com/
+[Glow]: https://github.com/charmbracelet/glow
+[Dotfiles-Tutorial]: https://www.atlassian.com/git/tutorials/dotfiles
+
 # Node Dev DotFiles
 
 Version managed user environment configuration for NodeJS developers.
 
-> Note: This repo is public as it helps setup access to other restricted repos.
-> There's no private data or secrets committed.
+> ⚠️ This repo is public as it helps setup access to other restricted repos.
+> Don't commit private data or secrets.
 
 ---
 
@@ -21,7 +31,7 @@ xcode-select --install
 
 ## Homebrew
 
-Homebrew manages all the utilities and apps we need to do the job.
+Homebrew manages most of the utilities and apps we need to do the job.
 
 Visit [https://brew.sh](https://brew.sh) to confirm install command is up to date.
 
@@ -31,8 +41,8 @@ Visit [https://brew.sh](https://brew.sh) to confirm install command is up to dat
 
 # Install
 
-This repo clones into the `$HOME` path for simple cross-machine consistent configuration.
-For more details on the approach see: https://www.atlassian.com/git/tutorials/dotfiles
+This repo clones into the `$HOME` path for consistent cross-machine configuration.
+[See here for a tutorial on this approach][Dotfiles-Tutorial].
 
 Run the install script below.
 
@@ -43,7 +53,7 @@ Run the install script below.
 What does this script do?
 
 1. Clones the repo to `~/.cfg` for working tree at `~/` including:
-	- A ZSH config file with sensible defaults
+	- A ZSH config file `.zshrc` with sensible defaults
 	- `config` alias to run git commands on this repo
 	- `secret` bin script for storing shell secrets in your key chain
 	- `awssso` bin script for interacting with AWS SSO profiles
@@ -52,10 +62,12 @@ What does this script do?
   - [Visual Studio Code](https://code.visualstucdio.com/)
   - [Open VPN Connect](https://code.visualstucdio.com/)
   - [Glow markdown CLI](https://github.com/charmbracelet/glow)
-4. Compiles an Antibody bundle of ZSH plugins to load on shell init
-5. Takes inputs for creating global git config file
+4. Compiles an [Antibody][Antibody] bundle of ZSH plugins to load on shell init
+5. Takes inputs for creating global git user config file
 
-Other apps can be manually installed, e.g recommended: [Alfred](https://www.alfredapp.com/), [Insomnia](https://insomnia.rest/), [Warp](https://www.warp.dev/).
+> `.zshrc` will also source `.zshrc.local` if it exists, so add any personal configs there.
+
+Other apps can be manually installed, e.g recommended: [Alfred][Alfred], [Insomnia][Insomnia], [Warp][Warp].
 
 ```
 brew install alfred insomnia warp
@@ -72,7 +84,7 @@ Continue to docs for more detailed next steps:
 # Links
 
 - [Contribution guide](./docs/CONTRIBUTING.md)
-- [DotFiles tutorial](https://www.atlassian.com/git/tutorials/dotfiles)
-- [Homebrew](https://docs.brew.sh/)
-- [Oh-My-ZSH](https://github.com/ohmyzsh/ohmyzsh/)
-- [Antibody](https://getantibody.github.io/)
+- [DotFiles tutorial][Dotfiles-Tutorial]
+- [Homebrew][Homebrew]
+- [Oh-My-ZSH][Oh-My-ZSH]
+- [Antibody][Antibody]

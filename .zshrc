@@ -41,6 +41,12 @@ SPACESHIP_GIT_STATUS_COLOR=magenta
 secret export NPM_TOKEN
 secret export BUILDKITE_TOKEN
 
+# ZSH local
+# Add personal configs here
+if [ -f "$HOME/.zshrc.local" ]; then
+  source $HOME/.zshrc.local
+fi
+
 # Use hyphen-insensitive completion
 HYPHEN_INSENSITIVE="true"
 
