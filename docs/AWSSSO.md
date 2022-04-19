@@ -11,7 +11,7 @@ If you don't have `~/.aws/config` with your profile configs already, use AWS CLI
 aws configure sso
 ```
 
-Run our AWS SSO tool installer (which also adds your Zscaler cert to Python's certificate bundle).
+Run our AWS SSO tool installer. It clones the `aws-sso-credentials` tool into `~/lib`.
 
 ```sh
 awssso install
