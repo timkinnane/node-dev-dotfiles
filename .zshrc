@@ -1,15 +1,3 @@
-# Path
-# Extend defaults with Homebrew and user binary paths
-export PATH=/usr/local/sbin:$PATH
-export PATH=/usr/bin:$PATH
-export PATH=/usr/sbin:$PATH
-export PATH=/sbin:$PATH
-export PATH=/bin:$PATH
-export PATH=/private/tmp:$PATH
-export PATH=/usr/local/bin:$PATH
-export PATH=$HOME/bin:$PATH
-export MANPATH=/usr/local/man:$MANPATH
-
 # Antibody
 # https://getantibody.github.io/
 # Run static antibody bundle to load ZSH and plugins
@@ -38,6 +26,7 @@ SPACESHIP_GIT_STATUS_COLOR=magenta
 # Secrets
 # Internal tool at ~/bin/secret
 # Export secrets from Keychain into shell
+source $HOME/lib/secret.sh
 secret export NPM_TOKEN
 secret export BUILDKITE_TOKEN
 
@@ -46,6 +35,18 @@ secret export BUILDKITE_TOKEN
 if [ -f "$HOME/.zshrc.local" ]; then
   source $HOME/.zshrc.local
 fi
+
+# Path
+# Extend defaults with Homebrew and user binary paths
+export PATH=/usr/local/sbin:$PATH
+export PATH=/usr/bin:$PATH
+export PATH=/usr/sbin:$PATH
+export PATH=/sbin:$PATH
+export PATH=/bin:$PATH
+export PATH=/private/tmp:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=$HOME/bin:$PATH
+export MANPATH=/usr/local/man:$MANPATH
 
 # Use hyphen-insensitive completion
 HYPHEN_INSENSITIVE="true"

@@ -6,6 +6,8 @@
 [Warp]: https://www.warp.dev/
 [VS-Code]: https://code.visualstucdio.com/
 [Glow]: https://github.com/charmbracelet/glow
+[OpenVPN]: https://openvpn.net/
+[Authy]: https://authy.com/
 [Dotfiles-Tutorial]: https://www.atlassian.com/git/tutorials/dotfiles
 
 # Node Dev DotFiles
@@ -59,13 +61,14 @@ What does this script do?
 	- `awssso` bin script for interacting with AWS SSO profiles
 2. Ignores any user files that aren't explicitly tracked
 3. Installs app bundle with Homebrew...
-  - [Visual Studio Code](https://code.visualstucdio.com/)
-  - [Open VPN Connect](https://code.visualstucdio.com/)
-  - [Glow markdown CLI](https://github.com/charmbracelet/glow)
+  - [Visual Studio Code][VS-Code]
+  - [Open VPN Connect][OpenVPN]
+  - [Glow markdown CLI][Glow]
+  - [Authy for 2FA][Authy]
 4. Compiles an [Antibody][Antibody] bundle of ZSH plugins to load on shell init
 5. Takes inputs for creating global git user config file
 
-> `.zshrc` will also source `.zshrc.local` if it exists, so add any personal configs there.
+> 💁‍♂️ `.zshrc` will also source `.zshrc.local` if it exists, so add any personal configs there.
 
 Other apps can be manually installed, e.g recommended: [Alfred][Alfred], [Insomnia][Insomnia], [Warp][Warp].
 
@@ -80,6 +83,9 @@ Continue to docs for more detailed next steps:
 1. [Authenticating tools with AWS SSO](./docs/AWSSSO.md)
 2. [Access control with SSH and GPG keys](./docs/KEYS.md)
 3. [Manage language versions with ASDF](./docs/ASDF.md)
+4. [Adding secret tokens to your keychain]('/docs/SECRETS.md')
+
+> 💁‍♀️ We have installed the desktop app for Authy, which you can sync with your phone for simple 2FA.
 
 # Links
 

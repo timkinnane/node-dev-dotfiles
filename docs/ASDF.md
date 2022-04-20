@@ -8,7 +8,7 @@ We need to install the Node plugin separately...
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 ```
 
-> Tip: List the all Node LTS versions with `asdf list all nodejs`
+> 👨‍💻 List the all Node LTS versions with `asdf list all nodejs`
 
 Install the Node version you need for your project (e.g. LTS v14 or v16)...
 
@@ -41,4 +41,10 @@ See https://github.com/danhper/asdf-python
 
   [BACK TO README](../README.md#Setup)
   
+</div>
+
+<div style="float:right">
+
+  [NEXT STEP](./SECRETS.md)
+
 </div>

@@ -2,7 +2,7 @@
 
 Add a global config for your user (with VS Code now installed).
 
-> Tip: give your computer a unique and easy to identify name in `System Preferences > Sharing`
+> 🏷️ Give your computer a unique and easy to identify name in `System Preferences > Sharing`
 
 Follow tutorial to create a new SSH key for this computer and add to `ssh-agent`:
 [https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
