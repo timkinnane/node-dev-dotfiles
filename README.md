@@ -83,7 +83,7 @@ Continue to docs for more detailed next steps:
 1. [Authenticating tools with AWS SSO](./docs/AWSSSO.md)
 2. [Access control with SSH and GPG keys](./docs/KEYS.md)
 3. [Manage language versions with ASDF](./docs/ASDF.md)
-4. [Adding secret tokens to your keychain]('/docs/SECRETS.md')
+4. [Adding secret tokens to your keychain](./docs/SECRETS.md)
 
 > 💁‍♀️ We have installed the desktop app for Authy, which you can sync with your phone for simple 2FA.
 
