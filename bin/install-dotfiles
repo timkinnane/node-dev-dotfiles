@@ -5,7 +5,7 @@ GIT_DIR=$HOME/.cfg
 # Clone and checkout DotFiles
 if [ ! -d "$GIT_DIR" ]; then
   echo -e "🟡 Cloning DotFiles to $GIT_DIR\n"
-  command git clone --bare git@github.com:acloudguru/dotfiles.git $GIT_DIR
+  command git clone --bare git@github.com:acloudguru/node-dev-dotfiles.git $GIT_DIR
   command git --git-dir=$GIT_DIR --work-tree=$HOME checkout
   command git --git-dir=$GIT_DIR config --local status.showUntrackedFiles no
 else
