@@ -41,6 +41,14 @@ Visit [https://brew.sh](https://brew.sh) to confirm install command is up to dat
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
+Follow "Next Steps" from the Homebrew installer's terminal output.
+
+Ensure it's working before proceeding...
+
+```sh
+brew -v
+```
+
 # Install
 
 This repo clones into the `$HOME` path for consistent cross-machine configuration.
