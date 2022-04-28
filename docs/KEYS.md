@@ -42,6 +42,6 @@ Load the key/s into GitHub, Gitlab and/or BitBucket
 
 <div style="float:right">
 
-  [NEXT STEP](./ASDF.md)
+  [NEXT STEP](./SECRETS.md)
 
 </div>

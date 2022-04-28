@@ -15,7 +15,7 @@
 Version managed user environment configuration for NodeJS developers.
 
 > ⚠️ This repo is public as it helps setup access to other restricted repos.
-> Don't commit private data or secrets.
+> Don't commit personal data or secrets.
 
 ---
 
@@ -57,7 +57,7 @@ This repo clones into the `$HOME` path for consistent cross-machine configuratio
 Run the install script below.
 
 ```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/timkinnane/node-dev-dotfiles/trunk/bin/install-dotfiles)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ACloudGuru/node-dev-dotfiles/trunk/bin/install-dotfiles)"
 ```
 
 What does this script do?
@@ -88,9 +88,9 @@ brew install alfred insomnia warp
 
 Continue to docs for more detailed next steps:
 
-1. [Authenticating tools with AWS SSO](./docs/AWSSSO.md)
-2. [Access control with SSH and GPG keys](./docs/KEYS.md)
-3. [Manage language versions with ASDF](./docs/ASDF.md)
+1. [Manage language versions with ASDF](./docs/ASDF.md)
+2. [Authenticating tools with AWS SSO](./docs/AWSSSO.md)
+3. [Access control with SSH and GPG keys](./docs/KEYS.md)
 4. [Adding secret tokens to your keychain](./docs/SECRETS.md)
 
 > 💁‍♀️ We have installed the desktop app for Authy, which you can sync with your phone for simple 2FA.

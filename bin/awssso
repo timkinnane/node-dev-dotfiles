@@ -22,17 +22,16 @@ if [ $MODE_OR_PROFILE = "install" ]; then
   fi
 
   # Install requirements, quiet mode so it doesn't shout if they exist
-  command pip3 install --quiet --requirement $SSO_TOOL_PATH/requirements.txt
-  echo -e "💁 Ignore deprecation warnings, they should be resolved with Python 3.10 release\n"
+  command pip install --quiet --requirement $SSO_TOOL_PATH/requirements.txt
 
   # Read the Zscaler cert into Python's cert bundle
   if [ ! -f "$ZSCALER_CERT_PATH" ]; then
     echo -e "🛑 Zscaler certificate missing, download to ${ZSCALER_CERT_PATH}\n"
-  elif [ ! -z "$(cat $ZSCALER_CERT_PATH | grep -f $(python3 -m certifi))" ]; then
-    echo -e "✅ Zscaler certificate exists in $(python3 -m certifi)\n"
+  elif [ ! -z "$(cat $ZSCALER_CERT_PATH | grep -f $(python -m certifi))" ]; then
+    echo -e "✅ Zscaler certificate exists in $(python -m certifi)\n"
   else
-    command cat $ZSCALER_CERT_PATH >> $(python3 -m certifi)
-    echo -e "🔐 Zscaler certificate added to $(python3 -m certifi)\n"
+    command cat $ZSCALER_CERT_PATH >> $(python -m certifi)
+    echo -e "🔐 Zscaler certificate added to $(python -m certifi)\n"
   fi
 
 # Use AWS SSO to create daily credentials for shell sessions
