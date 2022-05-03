@@ -52,4 +52,4 @@ fi
 echo -e "💟 DotFiles installed, restart shell for changes to take effect\n"
 
 # Prompt to open docs
-echo -e "📓 Open next steps documentation with \`glow ~/docs/AWSSSO.md\`\n"
+echo -e "📓 Open next steps documentation with \`glow ~/docs/ASDF.md\`\n"
