@@ -1,3 +1,8 @@
+# Homebrew
+# https://brew.sh/
+# Alias command to update all installed Homebrew modules
+alias upbrew="brew update && brew upgrade && brew cleanup && brew doctor && say 'brews done'"
+
 # Antibody
 # https://getantibody.github.io/
 # Run static antibody bundle to load ZSH and plugins
@@ -15,13 +20,10 @@ alias config='git --git-dir=$HOME/.cfg --work-tree=$HOME'
 # Add ASDF environment setup.
 source $(brew --prefix asdf)/libexec/asdf.sh
 
-# Spaceship
-# https://spaceship-prompt.sh/
-# Fix unsightly colours in prompt ;)
-LSCOLORS=ExFxBxDxCxegedabagacad
-SPACESHIP_DIR_COLOR=blue
-SPACESHIP_PACKAGE_SHOW=false
-SPACESHIP_GIT_STATUS_COLOR=magenta
+# AWS SSO
+# https://github.com/acloudguru/aws-sso-credentials
+# Helpers for install and profile switching via SSO tool
+source $HOME/lib/awssso.sh
 
 # Secrets
 # Internal tool at ~/bin/secret
@@ -29,6 +31,14 @@ SPACESHIP_GIT_STATUS_COLOR=magenta
 source $HOME/lib/secret.sh
 secret export NPM_TOKEN
 secret export BUILDKITE_TOKEN
+
+# Spaceship
+# https://spaceship-prompt.sh/
+# Fix unsightly colours in prompt ;)
+LSCOLORS=ExFxBxDxCxegedabagacad
+SPACESHIP_DIR_COLOR=blue
+SPACESHIP_PACKAGE_SHOW=false
+SPACESHIP_GIT_STATUS_COLOR=magenta
 
 # ZSH local
 # Add personal configs here
