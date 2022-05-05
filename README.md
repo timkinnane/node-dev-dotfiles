@@ -78,7 +78,11 @@ What does this script do?
 
 > 💁‍♂️ `.zshrc` will also source `.zshrc.local` if it exists, so add any personal configs there.
 
+### Optional Apps
+
 Other apps can be manually installed, e.g recommended: [Alfred][Alfred], [Insomnia][Insomnia], [Warp][Warp].
+
+Check those out and you can run this command at any time.
 
 ```
 brew install alfred insomnia warp
