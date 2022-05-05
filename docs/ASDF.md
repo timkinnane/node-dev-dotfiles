@@ -12,28 +12,25 @@ Install the Node plugin.
 asdf plugin-add nodejs
 ```
 
+Install and define a **global** Node version. e.g. LTS Gallium (v16)...
+
+```sh
+asdf install nodejs lts-gallium
+```
+
 > 👨‍💻 List the all Node LTS versions with `asdf list all nodejs lts`
 
-Install the Node version you need for your project (e.g. LTS v14 or v16)...
+When you move into project directories, you may need to install the local version.
+
+**For example** in a project path there might be a `.tool-versions` with `nodejs 14.15.4`
+
+To make that version available, install it with:
 
 ```sh
-asdf install nodejs lts-gallium # node v16 lts
-asdf install nodejs lts-fermium # node v14 lts
+asdf install nodejs 14.15.4
 ```
 
-You can set a global version:
-
-```
-asdf global nodejs lts-gallium
-```
-
-ASDF will also read version files and switch automatically.
-
-**For example** create a lock file for the current Node version *in a project path*:
-
-```sh
-node -v > .node-version
-```
+Now changing into that directory will activate the correct version of node locally.
 
 ### Setup Python
 
