@@ -1,6 +1,7 @@
 # CLI provides simple operation of the AWS SSO crentials tools
 # Usage:
 # awssso install - install all requiremnets
+# awssso init - create a new profile
 # awssso login - login to all profiles
 # awssso <profile> - switch to given profile
 awssso () {
@@ -22,9 +23,16 @@ awssso () {
     # Install requirements, quiet mode so it doesn't shout if they exist
     command pip3 install --quiet --requirement $SSO_TOOL_PATH/requirements.txt
 
+  # Use AWS SSO to configure a new profile
+  elif [ $MODE_OR_PROFILE = "init" ]; then
+    export AWS_PROFILE=
+    export AWS_DEFAULT_PROFILE=
+    command aws configure sso
+
   # Use AWS SSO to create daily credentials for shell sessions
   elif [ $MODE_OR_PROFILE = "login" ]; then
     command $SSO_TOOL_PATH/awssso --all --login
+    export AWS_SDK_LOAD_CONFIG=1
 
   # Use AWS SSO to a given profile and add it to env defaults
   else

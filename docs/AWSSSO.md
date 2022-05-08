@@ -11,15 +11,17 @@ Run our AWS SSO tool installer. It clones the `aws-sso-credentials` tool into `~
 awssso install
 ```
 
-If you don't have `~/.aws/config` with your profile configs already, use AWS CLI to create one:
+If you don't have `~/.aws/config` with your profile configs already, create one:
+
+```
+awssso init
+```
 
 > Tip:  Give profiles a simple name like `dev`, `staging` or `production`.
 
-```
-aws configure sso
-```
-
-You'll need to do that once per profile to create the local config. It won't be required again.
+You'll need to do that once per profile to create the local config. This is just an alias for `aws
+configure sso` but it also ensures no other profile is defined in env vars, which can otherwise
+risk assigning configs to the wrong profile.
 
 ### Usage
 
