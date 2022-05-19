@@ -21,9 +21,19 @@ alias config='git --git-dir=$HOME/.cfg --work-tree=$HOME'
 source $(brew --prefix asdf)/libexec/asdf.sh
 
 # AWS SSO
-# https://github.com/acloudguru/aws-sso-credentials
-# Helpers for install and profile switching via SSO tool
-source $HOME/lib/awssso.sh
+# https://granted.dev/
+# https://github.com/PredictMobile/aws-sso-credentials-getter
+# Function to switch profile and populate temporary credentials
+awssso () {
+	source assume $1
+	ssocred $1
+}
+# Function to assume and open AWS Profile in the console
+aws-console() {
+	assume -c $1 -s $2;
+}
+# Ensure AWS SDK uses config for profile region etc
+export AWS_SDK_LOAD_CONFIG=1
 
 # Secrets
 # Internal tool at ~/bin/secret

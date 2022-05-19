@@ -3,38 +3,32 @@
 Some Node libraries like Oprah and Serverless Framework use legacy credentials to
 authenticate AWS accounts, so we need a tool to populate those values from SSO sessions.
 
-### Install
-
-Run our AWS SSO tool installer. It clones the `aws-sso-credentials` tool into `~/lib`.
-
-```sh
-awssso install
-```
+### Setup
 
 If you don't have `~/.aws/config` with your profile configs already, create one:
 
 ```
-awssso init
+aws configure sso
 ```
+
+You'll need to do that once per profile to create the local config.
 
 > Tip:  Give profiles a simple name like `dev`, `staging` or `production`.
 
-You'll need to do that once per profile to create the local config. This is just an alias for `aws
-configure sso` but it also ensures no other profile is defined in env vars, which can otherwise
-risk assigning configs to the wrong profile.
+> Warning: Use `export AWS_PROFILE=` if there's an active profile to not assign configs to the wrong one.
 
 ### Usage
 
-Once each day, you'll need to login to populate credentials for any profiles in `~/.aws/config`
-
-```sh
-awssso login
-```
-
-Then switch into the desired profile, for example `dev`
+Switch into the desired profile, for example `dev`:
 
 ```sh
 awssso dev
+```
+
+There's also a shortcut to open the web console for a service using your profile:
+
+```sh
+aws-console dev s3
 ```
 
 ---
