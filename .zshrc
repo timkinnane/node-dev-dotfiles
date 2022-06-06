@@ -20,14 +20,11 @@ alias config='git --git-dir=$HOME/.cfg --work-tree=$HOME'
 # Add ASDF environment setup.
 source $(brew --prefix asdf)/libexec/asdf.sh
 
-# AWS SSO
+# Granted
 # https://granted.dev/
-# https://github.com/PredictMobile/aws-sso-credentials-getter
-# Function to switch profile and populate temporary credentials
-awssso () {
-	source assume $1
-	ssocred $1
-}
+# Alias to switch profile and populate temporary credentials
+alias awssso='source assume $1 --export'
+
 # Function to assume and open AWS Profile in the console
 aws-console() {
 	assume -c $1 -s $2;

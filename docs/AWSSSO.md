@@ -31,6 +31,8 @@ There's also a shortcut to open the web console for a service using your profile
 aws-console dev s3
 ```
 
+See [Granted docs](https://granted.dev/) for more details.
+
 ---
 
 <div style="float:left">
