@@ -1,6 +1,7 @@
 [Homebrew]: https://docs.brew.sh/
 [Oh-My-ZSH]: https://github.com/ohmyzsh/ohmyzsh/
 [Antibody]: https://getantibody.github.io/
+[Granted]: https://granted.dev
 [Alfred]: https://www.alfredapp.com/
 [Insomnia]: https://insomnia.rest/
 [Warp]: https://www.warp.dev/
@@ -72,6 +73,7 @@ What does this script do?
   - [Visual Studio Code][VS-Code]
   - [Open VPN Connect][OpenVPN]
   - [Glow markdown CLI][Glow]
+	- [Granted for AWS SSO][Granted]
   - [Authy for 2FA][Authy]
 4. Compiles an [Antibody][Antibody] bundle of ZSH plugins to load on shell init
 5. Takes inputs for creating global git user config file
