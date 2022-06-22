@@ -30,6 +30,12 @@ To make that version available, install it with:
 asdf install nodejs 14.15.4
 ```
 
+For MAC M1, if you want to install nodejs version < 16.x, run with `arch -x86_64`. e.g: 
+
+```sh
+arch -x86_64 asdf install nodejs 14.15.4
+```
+
 Now changing into that directory will activate the correct version of node locally.
 
 ### Setup Python
