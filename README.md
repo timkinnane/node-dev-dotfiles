@@ -7,7 +7,6 @@
 [Warp]: https://www.warp.dev/
 [VS-Code]: https://code.visualstucdio.com/
 [Glow]: https://github.com/charmbracelet/glow
-[OpenVPN]: https://openvpn.net/
 [Authy]: https://authy.com/
 [Dotfiles-Tutorial]: https://www.atlassian.com/git/tutorials/dotfiles
 
@@ -71,7 +70,6 @@ What does this script do?
 2. Ignores any user files that aren't explicitly tracked
 3. Installs app bundle with Homebrew...
   - [Visual Studio Code][VS-Code]
-  - [Open VPN Connect][OpenVPN]
   - [Glow markdown CLI][Glow]
 	- [Granted for AWS SSO][Granted]
   - [Authy for 2FA][Authy]
