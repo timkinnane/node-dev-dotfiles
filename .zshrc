@@ -63,6 +63,7 @@ export PATH=/bin:$PATH
 export PATH=/private/tmp:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/bin:$PATH
+export PATH=/opt/homebrew/bin:$PATH
 export MANPATH=/usr/local/man:$MANPATH
 
 # Use hyphen-insensitive completion
