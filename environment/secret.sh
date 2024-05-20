@@ -5,18 +5,19 @@ secret () {
     > secret set [KEY] [VALUE]
     > secret get [KEY]
     > secret export [KEY] # outputs: export [KEY]=[VALUE]
+    > secret export [KEY] --silent # logs only on errors
     > secret unset [KEY]
   "
 
   MODE="$1"
   KEY="$2"
-  VALUE="$3"
   KIND="shell secret"
   ACCOUNT="$(whoami)"
   ARG_LENGTH="$#"
 
   # Set a secret in keychain
   if [ $MODE = "set" ] && [ $ARG_LENGTH -eq "3" ]; then
+    VALUE="$3"
     if security add-generic-password -U -a "$ACCOUNT" -D "$KIND" -s "$KEY" -w "$VALUE";
     then echo "$KEY saved to keychain.";
     fi
@@ -26,11 +27,16 @@ secret () {
     security find-generic-password -a "$ACCOUNT" -D "$KIND" -s "$KEY" -w;
 
   # Export a secret to shell
-  elif [ $MODE = "export" ] && [ $ARG_LENGTH -eq "2" ]; then
+  elif [ $MODE = "export" ] && [ $ARG_LENGTH -ge "2" ]; then
+    SILENT=false
+    if [[ $* == *--silent* ]] SILENT=true
     if security find-generic-password -a "$ACCOUNT" -D "$KIND" -s "$KEY" -w &>/dev/null;
     then
-      export $KEY=$(secret get $KEY | xargs);
-      echo "$KEY loaded from keychain.";
+      export $KEY="$(secret get $KEY | xargs)"
+      # echo only if --silent is not passed
+      if [ $SILENT = "false" ]; then
+        echo "$KEY loaded from keychain.";
+      fi
     else
       echo "$KEY not found in keychain."
     fi

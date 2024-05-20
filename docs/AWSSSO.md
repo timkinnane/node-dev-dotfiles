@@ -1,48 +1,34 @@
-# Authenticating tools with AWS SSO
+[Granted]: https://granted.dev
 
-Some Node libraries like Oprah and Serverless Framework use legacy credentials to
-authenticate AWS accounts, so we need a tool to populate those values from SSO sessions.
+# AWS SSO
 
-### Setup
+Some libraries use legacy credentials to authenticate AWS accounts
 
-If you don't have `~/.aws/config` with your profile configs already, create one:
+[Granted] can populate those values from SSO sessions.
 
-```
-aws configure sso
+## Setup
+
+If you don't have `~/.aws/config` with your profile configs already, create one...
+
+```sh
+sso new
 ```
 
 You'll need to do that once per profile to create the local config.
 
-> Tip:  Give profiles a simple name like `dev`, `staging` or `production`.
+> [!Tip]
+> Give profiles a simple name like `dev`, `staging` or `production`.
+>
+> The command is an alias for `aws configure sso` but also unsets active profile so configs don't
+> apply to the wrong one.
 
-> Warning: Use `export AWS_PROFILE=` if there's an active profile to not assign configs to the wrong one.
-
-### Usage
+## Usage
 
 Switch into the desired profile, for example `dev`:
 
 ```sh
-awssso dev
+sso dev
 ```
-
-There's also a shortcut to open the web console for a service using your profile:
-
-```sh
-aws-console dev s3
-```
-
-See [Granted docs](https://granted.dev/) for more details.
 
 ---
-
-<div style="float:left">
-
-  [BACK TO README](../README.md#Setup)
-  
-</div>
-
-<div style="float:right">
-
-  [NEXT STEP](./KEYS.md)
-
-</div>
+Continue to [KEYS](./KEYS.md)

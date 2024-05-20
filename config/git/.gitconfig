@@ -5,4 +5,4 @@
 [gpg]
 	program = /usr/local/bin/gpg
 [init]
-	defaultBranch = trunk
+	defaultBranch = main
