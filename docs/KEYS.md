@@ -1,4 +1,4 @@
-# Access control with SSH and GPG keys
+# SSH and GPG Keys
 
 Add a global config for your user (with VS Code now installed).
 
@@ -13,9 +13,11 @@ Now you can use the GitHub CLI to authenticate your user and upload the cert.
 gh auth login
 ```
 
+Choose `GitHub.com`, `SSH` and the newly created cert, e.g. `~/id_ed25519.pub`
+
 ### GPG (optional)
 
-If you want to be vigilant with signed commits, also create a GPG key:
+To use signed commits you also need to create a GPG key:
 [https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/generating-a-new-gpg-key](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/generating-a-new-gpg-key)
 
 To copy your GPG key, first get the ID
@@ -31,17 +33,3 @@ gpg --armor --export <YOUR ID> | pbcopy
 ```
 
 Load the key/s into GitHub, Gitlab and/or BitBucket
-
----
-
-<div style="float:left">
-
-  [BACK TO README](../README.md#Setup)
-  
-</div>
-
-<div style="float:right">
-
-  [NEXT STEP](./SECRETS.md)
-
-</div>

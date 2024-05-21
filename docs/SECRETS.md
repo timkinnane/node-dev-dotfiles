@@ -1,46 +1,31 @@
-# Adding secret tokens to your keychain
+[Keychain]: https://ss64.com/osx/security.html
+[Weather CLI]: https://github.com/chubin/wttr.in
 
-macOS includes a [keychain CLI (AKA security binary)](https://ss64.com/osx/security.html) that we
-have leveraged to store and retrieve "global" secrets for your development environment.
+## Secrets
 
-## Setting Secrets
+The [`secrets.sh`](../environment/secret.sh) file provides a function to store key/value pairs in Apple [Keychain] for simple and secure loading.
 
-You might see in the shell init that two tokens are missing, `NPM_TOKEN` and `BUILDKITE_TOKEN`.
+Dotfiles exports a set of secrets as environment variables, allowing per-user shell configuration without committing to source.
 
-Login to those sites, ensure you're added to the organisation then create new tokens to use below:
+### Setup
 
-```sh
-secret set NPM_TOKEN "<YOUR_TOKEN>"
-secret set BUILDKITE_TOKEN "<YOUR_TOKEN>"
-```
+Set **all below** that apply, e.g. `secret set NPM_TOKEN "<YOUR_TOKEN>"`
 
-To check that something was set we can use:
+| Variable             | Description                                             | Example                         |
+| -------------------- | ------------------------------------------------------- | ------------------------------- |
+| `NPM_TOKEN`          | Allow pulling private packages from the NPM registry    |                                 |
+| `GITHUB_TOKEN`       | Set to allow interactions with API or packages registry |                                 |
+| `HOME_TOWN`          | Set for `weather` alias using [Weather CLI]             | `LONDON`                        |
+| `GIT_NAME`           | Set your git username for generating user config        | `Dev`                           |
+| `GIT_EMAIL`          | Set your git username for generating user config        | `dev@gmail.com`                 |
+| `GIT_USERNAME`       | Set your git username for generating user config        | `dev`                           |
 
-```sh
-secret get MY_SECRET
-```
+### Usage
 
-To remove a secret use:
-
-```sh
-secret unset MY_SECRET
-```
-
-## Exporting Secrets
-
-You can also script the export of secrets from the keychain into your environment.
-
-We do this already in `.zshrc` for the tokens mentioned above, but you can add any others you need
-to `.zshrc.local`.
-
-```sh
-secret export MY_SECRET
-```
+- Set secret value with `secret set MY_SECRET_KEY MY_SECRET_VALUE`
+- Get secret value with `secret get MY_SECRET_KEY`
+- Unset secret with `secret unset MY_SECRET_KEY`
+- Export secret to shell `secret export MY_SECRET_KEY`
 
 ---
-
-<div style="float:left">
-
-  [BACK TO README](../README.md#Setup)
-  
-</div>
+Continue to [ASDF](./ASDF.md)

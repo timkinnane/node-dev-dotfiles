@@ -1,5 +1,4 @@
 .DS_Store
 .bash_history
 node_modules
-~/.cfg
-~/.personal/.cfg
+/brewfile.lock.json

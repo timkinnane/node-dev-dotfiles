@@ -1,75 +1,73 @@
-# Manage language versions with ASDF
+[ASDF]: http://asdf-vm.com/
 
-[ASDF](http://asdf-vm.com/) is installed for switching language environment versions.
+# ASDF
 
-We use ASDF to manage NodeJS and Python (required to proceed to AWS SSO setup).
+[ASDF] is installed for installing and switching NodeJS and Python environment versions.
 
 ## Setup NodeJS
 
-Install the Node plugin.
+Install the Node plugin
 
-```
+```sh
 asdf plugin-add nodejs
 ```
 
-Install and define a **global** Node version. e.g. LTS Gallium (v16)...
+List the all Node versions (or find the [LTS versions
+online](https://nodejs.org/en/about/previous-releases))
 
 ```sh
-asdf install nodejs lts-gallium
+asdf list all nodejs lts
 ```
 
-> 👨‍💻 List the all Node LTS versions with `asdf list all nodejs lts`
+Define a **global** Node version. e.g. `22.2.0` for new features...
+
+```sh
+asdf install nodejs 22.2.0
+asdf global nodejs 22.2.0
+```
 
 When you move into project directories, you may need to install the local version.
 
-**For example** in a project path there might be a `.tool-versions` with `nodejs 14.15.4`
+**For example** in a project path there might be a `.tool-versions` with `nodejs 20.9.0`
 
 To make that version available, install it with:
 
 ```sh
-asdf install nodejs 14.15.4
+asdf install nodejs 20.9.0
 ```
 
-For MAC M1, if you want to install nodejs version < 16.x, run with `arch -x86_64`. e.g: 
+> [!NOTE]
+> For MAC M1, if you want to install Node version `<16.x` run with `arch > -x86_64`
 
 ```sh
 arch -x86_64 asdf install nodejs 14.15.4
 ```
 
-Now changing into that directory will activate the correct version of node locally.
-
 ### Setup Python
 
 Install the Python plugin
 
-```
+```sh
 asdf plugin-add python
 ```
 
-> 👨‍💻 List the all Python 3 versions with `asdf list all python 3`
-
-Install any version greater than `3.9.0` or for best compatibility, simply `3.9.12`.
+List all Python 3 versions to find latest
 
 ```sh
-asdf install python 3.9.12
+asdf list all python 3
 ```
 
-Set the global version:
+install any version greater than `3.9` for compatibility, e.g. `3.12.3`
 
 ```sh
-asdf global python 3.9.12
+asdf install python 3.12.3
+```
+
+Set the global version if you need to for system utils and ad-hoc scripts outside projects:
+
+```sh
+asdf global python 3.12.3
 ```
 
 ---
-
-<div style="float:left">
-
-  [BACK TO README](../README.md#Setup)
-  
-</div>
-
-<div style="float:right">
-
-  [NEXT STEP](./AWSSSO.md)
-
-</div>
+Continue to [AWSSSO](./AWSSSO.md)
