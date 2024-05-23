@@ -21,6 +21,8 @@ Open a terminal, enter the following, then go for a coffee ☕...
 xcode-select --install
 ```
 
+It may say "Command line tools are already installed". If so, continue to next steps.
+
 ## Homebrew
 
 [Homebrew][Homebrew] manages most of the utilities and apps we need to do the job.
