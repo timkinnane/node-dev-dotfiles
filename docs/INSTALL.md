@@ -12,6 +12,10 @@
 
 This repo is self-installing for consistent cross-machine configuration. [See tutorial for more info.](https://www.jakewiesler.com/blog/managing-dotfiles)
 
+> [!WARNING]
+> **Before installing** use `rm ~/.zshrc` to delete the default ZSH profile. The installer will not
+> overwrite any files, so if a ZSH profile exists it won't be able to link the one from dot files.
+
 Run the install script below.
 
 ```sh

@@ -1,7 +1,6 @@
 # Primary Brewfile for developer tools
 # 
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
 tap "buo/cask-upgrade"
 tap "teamookla/speedtest"
 tap "common-fate/granted"

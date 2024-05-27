@@ -7,7 +7,7 @@ The following are required **before** executing the install script.
 
 ## Cert Bundle
 
-The Zscaler cert bundle should be downloaded to `~/.ssh/zscaler-cert-bundle.pem`
+The Zscaler cert bundle should be downloaded to `~/.ssl/zscaler-bundle.pem`
 
 This location is exported as `CERTIFICATE_BUNDLE` and referenced for a variety of CLIs and environments.
 
@@ -58,6 +58,12 @@ Then authenticate your user, via web login...
 ```
 gh auth login
 ```
+
+The GitHub CLI will create and upload an SSH key to use with your account. Before proceeding you
+will need to grant that key access to any organization you want to access.
+
+Go to your [account settings for SSH Keys](https://github.com/settings/keys) and select "Configure
+SSO" for the key you just uploaded then click Authorize for each required org.
 
 ---
 Continue to [INSTALL](./INSTALL.md)
