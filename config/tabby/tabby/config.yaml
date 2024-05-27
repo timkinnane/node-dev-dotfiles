@@ -78,12 +78,12 @@ hotkeys:
   toggle-last-tab: []
   rename-tab:
     - ⌘-Enter
-  next-tab: []
-  previous-tab: []
-  move-tab-left:
-    - ⌘-Shift-[
-  move-tab-right:
+  next-tab:
     - ⌘-Shift-]
+  previous-tab:
+    - ⌘-Shift-[
+  move-tab-left: []
+  move-tab-right: []
   rearrange-panes:
     - Ctrl-Shift
   tab-1:
@@ -190,16 +190,16 @@ terminal:
       - '#ff79c6'
       - '#8be9fd'
       - '#ffffff'
-  font: Poppins
+  font: Inconsolata
   ligatures: true
   cursor: underline
   customColorSchemes: []
   fallbackFont: Victor Mono
   hideTabIndex: true
-  linePadding: 4
+  linePadding: 3
   copyAsHTML: false
   bell: audible
-  fontSize: 19
+  fontSize: 18
   fontWeight: 500
 ssh: {}
 clickableLinks:

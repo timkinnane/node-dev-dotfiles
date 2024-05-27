@@ -16,7 +16,7 @@ List the all Node versions (or find the [LTS versions
 online](https://nodejs.org/en/about/previous-releases))
 
 ```sh
-asdf list all nodejs lts
+asdf list all nodejs
 ```
 
 Define a **global** Node version. e.g. `22.2.0` for new features...

@@ -27,5 +27,22 @@ Set **all below** that apply, e.g. `secret set NPM_TOKEN "<YOUR_TOKEN>"`
 - Unset secret with `secret unset MY_SECRET_KEY`
 - Export secret to shell `secret export MY_SECRET_KEY`
 
+### Configure Git
+
+Once you've set all `GIT_` vars you can run the [config](../config.sh) script to populate local
+git configuration.
+
+First restart your shell for all secrets to be read into environment
+
+```sh
+zsh
+```
+
+Now run the config script...
+
+```sh
+. $DOTFILES/config.sh
+```
+
 ---
 Continue to [ASDF](./ASDF.md)
