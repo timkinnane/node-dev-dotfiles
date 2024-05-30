@@ -22,9 +22,9 @@ Version managed portable development environment configuration for JS/TS devs on
 #### Home Configs
 
 When installing a new tool that reads configuration from `$HOME`:
-1. Create folder for configs: `mkdir $DOTFILES/my-new-tool`
-2. Move any default configs: `mv $HOME/my-new-tool-config $DOTFILES/my-new-tool`
-3. Stow to link back to home: `stow -v -t $HOME -d $DOTFILES -S my-new-tool`
+1. Create folder for configs: `mkdir $DOTFILES/config/my-new-tool`
+2. Move any default configs: `mv $HOME/my-new-tool-config $DOTFILES/config/my-new-tool`
+3. Stow to link back to home: `stow -v -t $HOME -d $DOTFILES/config -S my-new-tool`
 
 #### Shell Configs
 

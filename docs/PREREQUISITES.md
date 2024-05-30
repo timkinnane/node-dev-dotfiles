@@ -7,7 +7,7 @@ The following are required **before** executing the install script.
 
 ## Cert Bundle
 
-The Zscaler cert bundle should be downloaded to `~/.ssh/zscaler-cert-bundle.pem`
+The Zscaler cert bundle should be downloaded to `~/.ssl/zscaler-bundle.pem`
 
 This location is exported as `CERTIFICATE_BUNDLE` and referenced for a variety of CLIs and environments.
 
@@ -20,6 +20,8 @@ Open a terminal, enter the following, then go for a coffee ☕...
 ```sh
 xcode-select --install
 ```
+
+It may say "Command line tools are already installed". If so, continue to next steps.
 
 ## Homebrew
 
