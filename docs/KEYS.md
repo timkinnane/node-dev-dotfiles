@@ -17,19 +17,30 @@ Choose `GitHub.com`, `SSH` and the newly created cert, e.g. `~/id_ed25519.pub`
 
 ### GPG (optional)
 
-To use signed commits you also need to create a GPG key:
+To use signed commits you also need to create a GPG key. Follow the steps here to create a new GPG key:
 [https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/generating-a-new-gpg-key](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/generating-a-new-gpg-key)
 
-To copy your GPG key, first get the ID
+Continue on to the [link in step 14](https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account) of the guidance above to add the GPG key to your GitHub account. You can also load the key into Gitlab and/or BitBucket if you use them.
+
+Grab your GPG key id by running the following command, then copy the id after the type prefix in what is returned e.g. `ed25519/<THIS PART>`
 
 ```sh
 gpg --list-secret-keys --keyid-format=long
 ```
 
-Export the key to the clipboard using the ID after the type prefix, e.g. `ed25519/<THIS PART>`
+Open the `.gitconfig` file in your home directory and add the following properties to your current config:
 
 ```sh
-gpg --armor --export <YOUR ID> | pbcopy
+[user]
+	signingkey = <COPIED KEY>
+[commit]
+	gpgsign = true
 ```
 
-Load the key/s into GitHub, Gitlab and/or BitBucket
+Download <b>GPG Suite</b> by running `brew install --cask gpg-suite` in the terminal.
+
+Next time you commit, you will be prompted to enter the passphrase that you used during the GPG set up steps.
+
+Once you have committed, you can run `git log --show-signature` to verify that your commit was signed.
+
+Additionally, in GitHub, your commits will show up with the green 'Verified' badge.
