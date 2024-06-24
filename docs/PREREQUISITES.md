@@ -43,6 +43,18 @@ Ensure it's working before proceeding...
 brew -v
 ```
 
+## Hostname
+
+At this point you may want to give your computer a recognizable host name.
+
+This name will display in places like Github settings when you create tokens to authenticate this computer.
+
+Change the default name in:
+- System Settings > About > Name
+- System Settings > Sharing > Local hostname
+
+e.g. `BobsWorkMac` and `BobsWorkMac.local`
+
 ## Github
 
 Since Github auth from the default terminal can be tricky, the best approach to cloning this repo is to use the GitHub CLI.
