@@ -71,8 +71,11 @@ Then authenticate your user, via web login...
 gh auth login
 ```
 
-The GitHub CLI will create and upload an SSH key to use with your account. Before proceeding you
-will need to grant that key access to any organization you want to access.
+Choose `Github.com`, `SSH` and `Yes` to generate a new SSH key to add to your GitHub account
+(passphrase is optional).
+
+The GitHub CLI will create and upload the SSH key. Before proceeding you will need to grant that
+key access to any organization you want to access.
 
 Go to your [account settings for SSH Keys](https://github.com/settings/keys) and select "Configure
 SSO" for the key you just uploaded then click Authorize for each required org.
