@@ -34,6 +34,7 @@ zmodule ohmyzsh/ohmyzsh --root plugins/jsontools
 zmodule ohmyzsh/ohmyzsh --root plugins/macos
 zmodule ohmyzsh/ohmyzsh --root plugins/node
 zmodule ohmyzsh/ohmyzsh --root plugins/yarn
+zmodule ohmyzsh/ohmyzsh --root plugins/fzf
 
 #
 # My personal modules
