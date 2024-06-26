@@ -37,7 +37,7 @@ zmodule ohmyzsh/ohmyzsh --root plugins/yarn
 zmodule ohmyzsh/ohmyzsh --root plugins/fzf
 
 #
-# My personal modules
+# Additional 3rd party modules
 #
 
 zmodule jirutka/zsh-shift-select
