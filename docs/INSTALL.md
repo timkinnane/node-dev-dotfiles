@@ -2,7 +2,7 @@
 [Glow]: https://github.com/charmbracelet/glow
 [Granted]: https://granted.dev
 [Homebrew]: https://docs.brew.sh/
-[Oh-My-ZSH]: https://github.com/ohmyzsh/ohmyzsh/
+[Oh-My-ZSH]: https://ohmyz.sh/
 [Stow]: https://www.gnu.org/software/stow/manual/stow.html
 [Tabby]: https://tabby.sh/
 [VS-Code]: https://code.visualstucdio.com/
@@ -49,12 +49,15 @@ The install script will do the following:
 
 ## Shell Modules
 
-[ZimFW][ZimFW] is a plugin manager for ZSH. It is self-installed by the [ZSH profile](../zsh/.zshrc).
-If there's an issue loading plugins see [manual installation guide](https://github.com/zimfw/zimfw#manual-installation).
-
 [Stow] is used to link configs for tools that are required to be in the `$HOME` dir.
 
-Most paths in `.dotfiles` are linked as Stow packages by the install script.
+All paths in `.dotfiles/config` are linked as Stow packages by the install script.
+
+Shell modules are installed and loaded by [ZimFW] for ZSH (the default shell on Mac OS).
+- Initialised by the [ZSH profile](../config/zsh/.zshrc) and [Zim script](../environment/zim.sh).
+- Includes a suite of [Oh-My-ZSH] plugins, listed in the [`.zimrc`](../config/zim/.zimrc) config.
+
+If there's an issue loading plugins see [manual installation guide](https://github.com/zimfw/zimfw#manual-installation).
 
 ---
 Continue to [SECRETS](./SECRETS.md)
