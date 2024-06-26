@@ -19,24 +19,33 @@ Version managed portable development environment configuration for JS/TS devs on
 
 ## Updating
 
-#### Home Configs
+#### Pulling Changes
+
+To update your local dotfiles and get the benefit of any contributions since you setup your machine:
+1. Go to the dotfiles path `cd $DOTFILES`
+2. Make sure you have no uncommitted changes: `git status`
+3. Ensure you're on the primary branch: `git checkout trunk`
+4. Pull latest changes: `git pull`
+6. Rerun installer to get new modules: `dotfiles-install`
+
+#### Adding Home Configs
 
 When installing a new tool that reads configuration from `$HOME`:
 1. Create folder for configs: `mkdir $DOTFILES/config/my-new-tool`
 2. Move any default configs: `mv $HOME/my-new-tool-config $DOTFILES/config/my-new-tool`
 3. Stow to link back to home: `stow -v -t $HOME -d $DOTFILES/config -S my-new-tool`
 
-#### Shell Configs
+#### Adding Shell Configs
 
 When adding a new environment module (any custom shell configs, functions, alias etc):
 1. Create (and edit) code: `touch $DOTFILES/environment/my-new-module.sh`
 2. Start a new terminal session or run `zsh` to initialise in place
 
-### Brew Bundles
+### Adding Brew Bundles
 
 After adding a new package to `brewfile`, run `brew bundle install --file=$DOTFILES/brewfile`
 
-### All Changes
+### Pushing Changes
 
 **Commit and push** any changes above to save for future installs.
 
