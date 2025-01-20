@@ -2,6 +2,7 @@ export DOTFILES=$HOME/.dotfiles
 alias dotfiles='cd $DOTFILES'
 alias dotfiles-install='. $DOTFILES/install.sh'
 alias dotfiles-config='. $DOTFILES/config.sh'
+alias dev='cd ~/Code'
 
 # Extend path with Homebrew and user binary paths
 export PATH=/usr/local/sbin:$PATH
