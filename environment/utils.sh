@@ -11,3 +11,9 @@ alias scripts="cat package.json | jq '.scripts'"
 
 ## Render README.md with glow
 alias readme="cat README.md | glow"
+
+# Set window/tab title to working dir on change
+function set_win_title() {
+  echo -ne "\033]0; $(basename "$PWD") \007"
+}
+precmd_functions+=(set_win_title)
