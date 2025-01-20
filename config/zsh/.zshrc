@@ -2,6 +2,7 @@ export DOTFILES=$HOME/.dotfiles
 alias dotfiles='cd $DOTFILES'
 alias dotfiles-install='. $DOTFILES/install.sh'
 alias dotfiles-config='. $DOTFILES/config.sh'
+alias dev='cd ~/Code'
 
 # Extend path with Homebrew and user binary paths
 export PATH=/usr/local/sbin:$PATH
@@ -22,13 +23,14 @@ source $DOTFILES/environment/secret.sh
 
 # Export dotfiles secrets
 secret export NPM_TOKEN --silent
-secret export VERCEL_TOKEN --silent
+secret export ARTIFACTORY_NPM_TOKEN --silent
 secret export HOME_TOWN --silent
 secret export GIT_NAME --silent
 secret export GIT_EMAIL --silent
 secret export GIT_USERNAME --silent
 
 # Source environment extensions
+source $DOTFILES/environment/npm.sh
 source $DOTFILES/environment/asdf.sh
 source $DOTFILES/environment/awssdk.sh
 source $DOTFILES/environment/certs.sh
@@ -37,7 +39,6 @@ source $DOTFILES/environment/granted.sh
 source $DOTFILES/environment/killport.sh
 source $DOTFILES/environment/pnpm.sh
 source $DOTFILES/environment/search.sh
-source $DOTFILES/environment/starship.sh
 source $DOTFILES/environment/starship.sh
 source $DOTFILES/environment/upbrew.sh
 source $DOTFILES/environment/utils.sh

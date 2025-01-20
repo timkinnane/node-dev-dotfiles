@@ -190,21 +190,23 @@ terminal:
       - '#ff79c6'
       - '#8be9fd'
       - '#ffffff'
-  font: Inconsolata
+  font: Monaspace Xenon
   ligatures: true
   cursor: underline
   customColorSchemes: []
   fallbackFont: Victor Mono
   hideTabIndex: true
-  linePadding: 3
+  linePadding: 6
   copyAsHTML: false
   bell: audible
-  fontSize: 18
-  fontWeight: 500
+  fontSize: 16
+  fontWeightBold: 400
+  fontWeight: 200
 ssh: {}
 clickableLinks:
   modifier: metaKey
-accessibility: {}
+accessibility:
+  animations: false
 appearance:
   dockFill: 1
   vibrancy: true
@@ -218,3 +220,5 @@ profileBlacklist: []
 profileDefaults:
   ssh:
     disableDynamicTitle: true
+  local: {}
+enableAnalytics: false

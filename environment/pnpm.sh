@@ -15,3 +15,5 @@ alias pdf="pnpm add -D --filter"
 alias pi="pnpm install --loglevel=error"
 alias pw="pnpm install --workspace-root"
 alias pui="pnpm upgrade --interactive --latest"
+
+alias npm-auth="npm login --registry=https://pluralsight.jfrog.io/artifactory/api/npm/npm/ --auth-type=web"

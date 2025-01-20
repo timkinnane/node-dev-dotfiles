@@ -2,3 +2,4 @@
 .bash_history
 node_modules
 /brewfile.lock.json
+/client.truststore.jks

@@ -10,3 +10,6 @@ ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 # Disable marking untracked files under VCS as dirty
 DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Enable auto-completion for shell commands on history search
+# zstyle ':autocomplete:*' default-context history-incremental-search-backward

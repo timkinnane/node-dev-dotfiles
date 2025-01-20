@@ -4,18 +4,21 @@
 
 zmodule environment
 zmodule input
-zmodule termtitle
 zmodule utility
 
 #
 # Completion
 #
 
-# Additional completion definitions for Zsh.
 zmodule zsh-users/zsh-completions --fpath src
+zmodule zsh-users/zsh-history-substring-search
+
 # Enables and configures smart and extensive tab completion.
 # completion must be sourced after all modules that add completion definitions.
 zmodule completion
+
+zmodule grigorii-zander/zsh-npm-scripts-autocomplete
+
 
 #
 # ZSH plugin modules
@@ -33,8 +36,6 @@ zmodule ohmyzsh/ohmyzsh --root plugins/github
 zmodule ohmyzsh/ohmyzsh --root plugins/jsontools
 zmodule ohmyzsh/ohmyzsh --root plugins/macos
 zmodule ohmyzsh/ohmyzsh --root plugins/node
-zmodule ohmyzsh/ohmyzsh --root plugins/yarn
-zmodule ohmyzsh/ohmyzsh --root plugins/fzf
 
 #
 # Additional 3rd party modules
@@ -43,16 +44,8 @@ zmodule ohmyzsh/ohmyzsh --root plugins/fzf
 zmodule jirutka/zsh-shift-select
 
 #
-# Modules that must be initialized last
+# Modules that must be initialized last (after completion)
 #
 
-# Fish-like syntax highlighting for Zsh.
-# zsh-users/zsh-syntax-highlighting must be sourced after completion
-zmodule zsh-users/zsh-syntax-highlighting
-# Fish-like history search (up arrow) for Zsh.
-
-# zsh-users/zsh-history-substring-search must be sourced after zsh-users/zsh-syntax-highlighting
-zmodule zsh-users/zsh-history-substring-search
-
-# Fish-like autosuggestions for Zsh.
-zmodule zsh-users/zsh-autosuggestions
+zmodule zsh-users/zsh-syntax-highlighting # Fish-like syntax highlighting for Zsh.
+zmodule zsh-users/zsh-autosuggestions # Fish-like autosuggestions for Zsh.

@@ -43,6 +43,21 @@ asdf install nodejs 20.9.0
 arch -x86_64 asdf install nodejs 14.15.4
 ```
 
+### Setup PNPM
+
+ASDF can also manage your PNPM version per project.
+
+This is an **optional** step as opposed to using a global PNPM installed via Homebrew or Node's own
+[Corepack](https://nodejs.org/api/corepack.html) (which is still experimental).
+
+e.g. for setting up PNPM version `9.12.0` in a given project...
+
+```sh
+asdf plugin-add pnpm
+asdf install pnpm 9.12.0
+asdf local pnpm 9.12.0
+```
+
 ### Setup Python
 
 Install the Python plugin
